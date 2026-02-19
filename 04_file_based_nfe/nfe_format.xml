@@ -1,0 +1,143 @@
+<!--
+This file shows a described example for defining
+node factories and metrics factories.
+
+For this file, the settings xpath is:
+/data/settings/adore
+
+-->
+<data>
+  <settings>
+    <adore>
+      <!-- Defines node factories -->
+      <factories>
+        <factory>
+          <!-- The architecture element this factory is linked to -->
+          <element>
+            <!-- Element name, may be used for matching -->
+            <name>Element Name</name>
+
+            <!--
+            The factory should be associated to one or more ADORE architecture
+            elements, done by matching to name/ref of elements.
+            Matching rules are specified using <match> tags, which can contain
+            one of:
+            - "auto": match by name provided in <name>
+            - a pattern including wildcards
+              (* = any characters, ? = 0 or 1 character, [..] = optional chars)
+            - a regular expression, e.g. /c.*/i
+            Multiple rules can be specified.
+            -->
+            <match>auto</match><!-- Match "Element Name" -->
+            <match>El*</match><!-- Match starting with "El" (case insensitive) -->
+            <match>/[Ee]l[^N]*N.+/</match><!-- Match by regex -->
+
+            <!-- Optionally restrict to element type, one of (case insensitive):
+                 COMPONENT, FUNCTION, QOI, ATTRIBUTE, PORT -->
+            <type>component</type>
+          </element>
+
+          <!--
+          The xpath at which nodes should be created.
+          Following template parameters are available:
+
+            {INDEX}        : 0-index of the linked architecture element (empty
+                             string if not applicable)
+            {COMP_INDEX}   : 0-index of the component instance containing the
+                             element (if applicable)
+            {SYS_INDEX}    : 0-index of the system containing the arch element
+            {SYS_INDEX_n}  : 0-index of the containing system n levels up
+                             (SYS_INDEX_0 is equivalent to SYS_INDEX,
+                              SYS_INDEX_1 is the system above)
+
+            Same as above, however 1-indexed (counting starts at 1):
+            {INDEX1}       : 1-index of the linked architecture element
+            {COMP_INDEX1}  : 1-index of the component instance containing the element
+            {SYS_INDEX1}   : 1-index of the system containing the arch element
+            {SYS_INDEX1_n} : 1-index of the containing system n levels up
+          -->
+          <xpath>/data/elements</xpath>
+
+          <!-- The tag of the created nodes.
+               Supports the same template parameters as <xpath>. -->
+          <tag>createdNode</tag>
+
+          <!--
+          Attributes to add to the created nodes.
+
+          Attribute keys are specified by the tag:
+            e.g. <someName>...</someName> would create an attr with key "someName"
+
+          The following valueDef types are possible:
+          - Literal: the text will be directly used as value for the attribute
+          - Value from architecture element: use <element> (see below)
+          - Special value: use <special> (see below)
+          - Connection value: use <connection> (see below)
+          -->
+          <attributes>
+            <key>literal value (string)</key><!-- Literal value -->
+
+            <key><element><!-- Get the value of an element, e.g. a QOI -->
+              <name>Quantity</name>
+              <match>auto</match>
+              <type>QOI</type>
+            </element></key>
+
+            <!-- Get a value derived from the top-level factory element, one of:
+                 ID, NAME, VALUE, EL, INDEX -->
+            <key><special>NAME</special></key>
+
+            <!-- To track port connections -->
+            <key><connection>
+              <element>...</element><!-- Element matching the associated port -->
+              <dir>input</dir><!-- Optionally restricting the direction -->
+            </connection></key>
+          </attributes>
+
+          <!-- Child nodes to add to the created nodes -->
+          <childNodes>
+            <!-- Key-value pairs specified in the same way as attributes -->
+            <key>valueDef</key>
+          </childNodes>
+
+          <!-- Directly specify the node value, specified as above -->
+          <value>valueDef</value>
+        </factory>
+        ...
+      </factories>
+
+      <!-- Define output metrics -->
+      <metrics>
+        <metric>
+          <qoi>
+            <!-- QOI name, may be used for matching -->
+            <name>Element Name</name>
+
+            <!-- Matching rules (same as for a factory) -->
+            <match>auto</match><!-- Match "Element Name" -->
+            <match>El*</match><!-- Match starting with "El" (case insensitive) -->
+            <match>/[Ee]l[^N]*N.+/</match><!-- Match by regex -->
+          </qoi>
+
+          <!-- The xpath at which the numerical value should be read. If there
+               are multiple elements and/or QOIs, the read values will be
+               distributed. If no value can be read, NaN is assigned to the
+               matched QOI(s). -->
+          <xpath>/data/elements</xpath>
+        </metric>
+        ...
+      </metrics>
+
+      <!--
+      OPTIONAL: force the evaluation of a specific architecture (only available
+      when using remote optimization). This supports testing, as it allows the
+      manual creation of architectures in the GUI and subsequent evaluation using
+      the NFE.
+
+      Multiple `archForceEval` nodes can be added to request multiple
+      architectures.
+      -->
+      <archForceEval>Architecture name or # (1-indexed)</archForceEval>
+    </adore>
+  </settings>
+</data>

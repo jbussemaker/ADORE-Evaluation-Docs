@@ -1,0 +1,107 @@
+{
+  "commandScriptLinux" : "\"${dir:tool}\\adore_opt_cli\" \"${in:adoreopt_file}\" state.adoreopt output_file input_file --csv_export_file architectures.csv --debug",
+  "commandScriptWindows" : "\"${dir:tool}\\adore_opt_cli.exe\" \"${in:adoreopt_file}\" state.adoreopt output_file input_file --csv_export_file architectures.csv --debug",
+  "copyToolBehavior" : "never",
+  "deleteWorkingDirectoriesAfterWorkflowExecution" : true,
+  "deleteWorkingDirectoriesKeepOnErrorOnce" : true,
+  "documentationFilePath" : "",
+  "enableCommandScriptWindows" : true,
+  "groupName" : "ADORE",
+  "iconHash" : "a7f3a7afc9e201b17b6612fa22975b08",
+  "iconModified" : 1575368777225,
+  "imitationScript" : "",
+  "imitationToolOutputFilename" : "",
+  "inputs" : [ {
+    "inputHandling" : "Queue",
+    "endpointFileName" : "",
+    "endpointDataType" : "FileReference",
+    "defaultInputExecutionConstraint" : "Required",
+    "endpointName" : "adoreopt_file",
+    "defaultInputHandling" : "Queue",
+    "inputExecutionConstraint" : "Required",
+    "endpointFolder" : "Input folder"
+  }, {
+    "inputHandling" : "Queue",
+    "endpointFileName" : "",
+    "endpointDataType" : "FileReference",
+    "defaultInputExecutionConstraint" : "Required",
+    "endpointName" : "output_file",
+    "defaultInputHandling" : "Queue",
+    "inputExecutionConstraint" : "Required",
+    "endpointFolder" : "Input folder"
+  }, {
+    "inputHandling" : "Queue",
+    "endpointFileName" : "",
+    "endpointDataType" : "Integer",
+    "defaultInputExecutionConstraint" : "RequiredIfConnected",
+    "endpointName" : "counter",
+    "defaultInputHandling" : "Queue",
+    "inputExecutionConstraint" : "RequiredIfConnected",
+    "endpointFolder" : ""
+  } ],
+  "integrationType" : "Common",
+  "isActive" : true,
+  "launchSettings" : [ {
+    "limitInstallationInstancesNumber" : "10",
+    "limitInstallationInstances" : "true",
+    "rootWorkingDirectory" : "",
+    "host" : "RCE",
+    "toolDirectory" : "C:\\path\\to\\adore",
+    "version" : "1.0"
+  } ],
+  "outputs" : [ {
+    "inputHandling" : "-",
+    "endpointFileName" : "",
+    "endpointDataType" : "FileReference",
+    "endpointName" : "adoreopt_file",
+    "inputExecutionConstraint" : "-",
+    "endpointFolder" : ""
+  }, {
+    "inputHandling" : "-",
+    "endpointFileName" : "",
+    "endpointDataType" : "FileReference",
+    "endpointName" : "input_file",
+    "inputExecutionConstraint" : "-",
+    "endpointFolder" : ""
+  }, {
+    "inputHandling" : "-",
+    "endpointFileName" : "",
+    "endpointDataType" : "Boolean",
+    "endpointName" : "finished",
+    "inputExecutionConstraint" : "-",
+    "endpointFolder" : ""
+  }, {
+    "inputHandling" : "-",
+    "endpointFileName" : "",
+    "endpointDataType" : "FileReference",
+    "endpointName" : "adoreopt_file_final",
+    "inputExecutionConstraint" : "-",
+    "endpointFolder" : ""
+  }, {
+    "inputHandling" : "-",
+    "endpointFileName" : "",
+    "endpointDataType" : "Integer",
+    "endpointName" : "counter",
+    "inputExecutionConstraint" : "-",
+    "endpointFolder" : ""
+  }, {
+    "inputHandling" : "-",
+    "endpointFileName" : "",
+    "endpointDataType" : "FileReference",
+    "endpointName" : "csv_export",
+    "inputExecutionConstraint" : "-",
+    "endpointFolder" : ""
+  } ],
+  "postScript" : "import os\r\n\r\ncounter = RCE.read_input('counter', 0)\r\n\r\ninput_file = 'input_file'\r\nif os.path.exists(input_file):\r\n    RCE.write_output('counter', counter+1)\r\n#    RCE.write_output('input_file', input_file)\r\n#    RCE.write_output('adoreopt_file', 'state.adoreopt')\r\nelse:\r\n    RCE.write_output('finished', True)\r\n    RCE.write_output('adoreopt_file_final', 'state.adoreopt')\r\n    RCE.write_output('counter', counter)\r\n\r\n    fp = open(input_file, 'w')\r\n    fp.close()\r\n#    RCE.close_output('input_file')\r\n#    RCE.close_output('adoreopt_file')\r\n\r\nRCE.write_output('input_file', input_file)\r\nRCE.write_output('adoreopt_file', 'state.adoreopt')\r\nRCE.write_output('csv_export', 'architectures.csv')\r\n",
+  "preScript" : "import os\r\n\r\noutput_file = \"${in:output_file}\"\r\nfp = open(output_file, 'rb')\r\noutputs = fp.read().decode('utf-8')\r\nfp.close()\r\n\r\n# Only provide outputs if there are any output\r\nif outputs:\r\n    fp = open('output_file', 'wb')\r\n    fp.write(outputs.encode('utf-8'))\r\n    fp.close()\r\n\r\nelif os.path.exists('output_file'):\r\n    os.remove('output_file')",
+  "toolDescription" : "ADORE Remote File-Based System Architecture Optimization (RFSAO): provide an *.adoreopt file created in the GUI to run the optimization.\n\nIntegration mode: frozen deployment",
+  "toolIconPath" : "logo_32.png",
+  "toolIntegrationVersion" : 1,
+  "toolIntegratorE-Mail" : "jasper.bussemaker@dlr.de",
+  "toolIntegratorName" : "Jasper Bussemaker",
+  "toolName" : "AdoreOpt",
+  "toolProperties" : {
+    "Default" : { }
+  },
+  "uploadIcon" : true
+}

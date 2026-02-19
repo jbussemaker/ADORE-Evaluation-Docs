@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpacs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schema/cpacs_schema.xsd">
+    <header>
+        <name>Example system architecture</name>
+        <version>1.0.0</version>
+    </header>
+    <vehicles>
+        <aircraft>
+            <model uID="exampleAircraft">
+                <name>Example aircraft</name>
+                <engines></engines>
+                <systems>
+                    <genericSystems>
+                        <genericSystem uID="mySystem">
+                            <name>Example system</name>
+                        </genericSystem>
+                    </genericSystems>
+                </systems>
+                <systemArchitectures>
+                    <systemArchitecture>
+                        <name>Example system</name>
+                        <systemType>generic</systemType>
+                    </systemArchitecture>
+                </systemArchitectures>
+                <analyses>
+				  <massBreakdown>
+					<designMasses>
+					  <mTOM uID="TOM">
+						<mass>116230.0</mass>
+						<location uID="posCoG_TOM">
+						  <x>19.668</x>
+						  <z>-0.22877</z>
+						</location>
+						<massInertia>
+						  <Jxx>5018200.0</Jxx>
+						  <Jyy>9102700.0</Jyy>
+						  <Jzz>13920000.0</Jzz>
+						</massInertia>
+					  </mTOM>
+					</designMasses>
+				  </massBreakdown>
+                </analyses>
+            </model>
+        </aircraft>
+        <engines>
+            <engine uID="engine">
+                <name>Engine</name>
+                <rotors></rotors>
+            </engine>
+        </engines>
+        <systemElements>
+            <electricMotors>
+                <electricMotor uID="eMotor">
+                    <name>E-Motor</name>
+                    <geometry>
+                        <frustum>
+                            <lowerRadiusX>1</lowerRadiusX>
+                            <height>2</height>
+                            <upperRadiusX>1</upperRadiusX>
+                        </frustum>
+                    </geometry>
+                </electricMotor>
+            </electricMotors>
+            <heatExchangers>
+                <heatExchanger uID="hx">
+                    <name>Heat exchanger</name>
+                    <geometry>
+                        <parallelepiped>
+                            <length>1</length>
+                            <width>1</width>
+                            <height>1</height>
+                        </parallelepiped>
+                    </geometry>
+                </heatExchanger>
+            </heatExchangers>
+            <gearBoxes>
+                <gearBox uID="gearbox">
+                    <name>Gear box</name>
+                    <geometry>
+                        <frustum>
+                            <lowerRadiusX>0.56419</lowerRadiusX>
+                            <height>1</height>
+                            <upperRadiusX>0.56419</upperRadiusX>
+                        </frustum>
+                    </geometry>
+                </gearBox>
+            </gearBoxes>
+            <gasTurbines>
+                <gasTurbine uID="turboshaft">
+                    <name>Turboshaft</name>
+                    <geometry>
+                        <frustum>
+                            <lowerRadiusX>1</lowerRadiusX>
+                            <height>3</height>
+                            <upperRadiusX>1</upperRadiusX>
+                        </frustum>
+                    </geometry>
+                </gasTurbine>
+            </gasTurbines>
+            <generators>
+                <generator uID="generator">
+                    <name>Generator</name>
+                    <geometry>
+                        <frustum>
+                            <lowerRadiusX>0.56419</lowerRadiusX>
+                            <height>1</height>
+                            <upperRadiusX>0.56419</upperRadiusX>
+                        </frustum>
+                    </geometry>
+                </generator>
+            </generators>
+            <batteries>
+                <battery uID="batteryPack">
+                    <name>Battery Pack</name>
+                </battery>
+            </batteries>
+        </systemElements>
+    </vehicles>
+	<toolspecific>
+		<tool>
+			<name>ADORE</name>
+			<factories>
+				<componentFactory>
+					<element><name>Custom Sys Component Factory</name></element>
+					<systemElementUID>sys_el_uid</systemElementUID>
+				</componentFactory>
+			</factories>
+			<metrics>
+				
+			</metrics>
+		</tool>
+	</toolspecific>
+</cpacs>

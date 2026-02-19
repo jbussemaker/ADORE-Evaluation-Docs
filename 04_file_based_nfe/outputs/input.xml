@@ -1,0 +1,142 @@
+<gnc>
+  <!-- Data model for GNC problem -->
+  <sensors>
+    <sensor>
+      <type>A</type>
+      <targets>Computer_0_725a52</targets>
+    </sensor>
+    <sensor>
+      <type>B</type>
+      <targets>Computer_0_725a52</targets>
+    </sensor>
+    <sensor>
+      <type>C</type>
+      <targets>Computer_0_725a52</targets>
+    </sensor>
+  </sensors>
+  <computers>
+    <computer uID="Computer_0_725a52">
+      <type>B</type>
+      <targets>Actuator_0_ca4a71,Actuator_1_ed282d</targets>
+    </computer>
+  </computers>
+  <actuators>
+    <actuator uID="Actuator_0_ca4a71">
+      <type>B</type>
+    </actuator>
+    <actuator uID="Actuator_1_ed282d">
+      <type>B</type>
+    </actuator>
+  </actuators>
+  <performance>
+    <mass/>
+    <failureRate/>
+  </performance>
+  <!-- ADORE node factory settings -->
+  <adore>
+    <factories>
+      <factory>
+        <!-- Sensor factory -->
+        <element>
+          <name>sensor</name>
+          <match>auto</match>
+        </element>
+        <xpath>/gnc/sensors</xpath>
+        <tag>sensor</tag>
+        <contents>
+          <type>
+            <element>
+              <!-- Type attribute -->
+              <name>type</name>
+              <match>auto</match>
+              <type>ATTRIBUTE</type>
+            </element>
+          </type>
+          <!-- Serialized architecture element -->
+          <!--<element><special>EL</special></element>-->
+          <targets>
+            <connection>
+              <!-- Connection targets through port -->
+              <element>
+                <name>port</name>
+                <match>*</match>
+              </element>
+              <dir>output</dir>
+            </connection>
+          </targets>
+        </contents>
+      </factory>
+      <factory>
+        <!-- Computer factory -->
+        <element>
+          <name>computer</name>
+          <match>comp*</match>
+        </element>
+        <xpath>/gnc/computers</xpath>
+        <tag>computer</tag>
+        <contents>
+          <type>
+            <element>
+              <!-- Type attribute -->
+              <name>type</name>
+              <match>auto</match>
+              <type>ATTRIBUTE</type>
+            </element>
+          </type>
+          <!-- Serialized architecture element -->
+          <!--<element><special>EL</special></element>-->
+          <targets>
+            <connection>
+              <!-- Connection targets through port -->
+              <element>
+                <name>port</name>
+                <match>*</match>
+              </element>
+              <dir>output</dir>
+            </connection>
+          </targets>
+        </contents>
+      </factory>
+      <factory>
+        <!-- Actuator factory -->
+        <element>
+          <name>actuator</name>
+          <match>/act*/</match>
+        </element>
+        <xpath>/gnc/actuators</xpath>
+        <tag>actuator</tag>
+        <contents>
+          <type>
+            <element>
+              <!-- Type attribute -->
+              <name>type</name>
+              <match>auto</match>
+              <type>ATTRIBUTE</type>
+            </element>
+          </type>
+          <!-- Serialized architecture element -->
+          <!--<element><special>EL</special></element>-->
+        </contents>
+      </factory>
+    </factories>
+    <metrics>
+      <metric>
+        <!-- Mass metric -->
+        <qoi>
+          <name>mass</name>
+          <match>auto</match>
+        </qoi>
+        <xpath>/gnc/performance/mass</xpath>
+      </metric>
+      <metric>
+        <!-- Failure rate metric -->
+        <qoi>
+          <name>failure-rate</name>
+          <match>auto</match>
+        </qoi>
+        <xpath>/gnc/performance/failureRate</xpath>
+      </metric>
+    </metrics>
+    <archId>735</archId>
+  </adore>
+</gnc>

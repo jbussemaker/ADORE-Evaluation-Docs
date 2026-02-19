@@ -1,0 +1,1847 @@
+{
+    "projectName": "Guidance, Navigation & Control",
+    "architecture": {
+        "id": 735,
+        "name": "Architecture #10",
+        "constraints": [],
+        "context": {
+            "id": 736,
+            "name": "System Context",
+            "elementId": 14,
+            "components": [],
+            "concepts": [],
+            "decompositions": [],
+            "functions": [],
+            "multiFulfillments": [],
+            "nonFulfillments": [],
+            "ports": [],
+            "qois": []
+        },
+        "decisions": [],
+        "designProblemId": 67,
+        "designVars": [
+            {
+                "id": 767,
+                "name": "Instantiate Component Actuator",
+                "ref": "decisiontype-option",
+                "active": true,
+                "designVarId": 68,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "1 time",
+                    "2 times",
+                    "3 times"
+                ]
+            },
+            {
+                "id": 768,
+                "name": "Instantiate Component Computer",
+                "active": true,
+                "designVarId": 69,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "1 time",
+                    "2 times",
+                    "3 times"
+                ]
+            },
+            {
+                "id": 769,
+                "name": "Instantiate Component Sensor",
+                "active": true,
+                "designVarId": 70,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "1 time",
+                    "2 times",
+                    "3 times"
+                ]
+            },
+            {
+                "id": 770,
+                "name": "Attribute Actuator 1/3 -> Type (1)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 71,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 771,
+                "name": "Attribute Actuator 1/3 -> Type (2)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 72,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 772,
+                "name": "Attribute Actuator 1/3 -> Type (3)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 73,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 773,
+                "name": "Attribute Actuator 1/3 -> Type (4)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 74,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 774,
+                "name": "Attribute Computer 1/3 -> Type (1)",
+                "active": true,
+                "designVarId": 75,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 775,
+                "name": "Attribute Computer 1/3 -> Type (2)",
+                "active": true,
+                "designVarId": 76,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 776,
+                "name": "Attribute Computer 1/3 -> Type (3)",
+                "active": true,
+                "designVarId": 77,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 777,
+                "name": "Attribute Computer 1/3 -> Type (4)",
+                "active": false,
+                "designVarId": 78,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 778,
+                "name": "Attribute Sensor 1/3 -> Type (1)",
+                "active": true,
+                "designVarId": 79,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 779,
+                "name": "Attribute Sensor 1/3 -> Type (2)",
+                "active": true,
+                "designVarId": 80,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 780,
+                "name": "Attribute Sensor 1/3 -> Type (3)",
+                "active": true,
+                "designVarId": 81,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 781,
+                "name": "Attribute Sensor 1/3 -> Type (4)",
+                "active": false,
+                "designVarId": 82,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 782,
+                "name": "Connect Port Command (1)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 83,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 783,
+                "name": "Connect Port Command (2)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 84,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 784,
+                "name": "Connect Port Command (3)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 85,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 785,
+                "name": "Connect Port Command (4)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 86,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 786,
+                "name": "Connect Port Command (5)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 87,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 787,
+                "name": "Connect Port Command (6)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 88,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 788,
+                "name": "Connect Port Command (7)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 89,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 789,
+                "name": "Connect Port Command (8)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 90,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 790,
+                "name": "Connect Port Command (9)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 91,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 791,
+                "name": "Connect Port Data (1)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 92,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 792,
+                "name": "Connect Port Data (2)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 93,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 793,
+                "name": "Connect Port Data (3)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 94,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 794,
+                "name": "Connect Port Data (4)",
+                "ref": "decisiontype-permutation",
+                "active": true,
+                "designVarId": 95,
+                "fixed": false,
+                "optionIndex": 1,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 795,
+                "name": "Connect Port Data (5)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 96,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 796,
+                "name": "Connect Port Data (6)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 97,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 797,
+                "name": "Connect Port Data (7)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 98,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 798,
+                "name": "Connect Port Data (8)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 99,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 799,
+                "name": "Connect Port Data (9)",
+                "ref": "decisiontype-permutation",
+                "active": false,
+                "designVarId": 100,
+                "fixed": false,
+                "optionIndex": 0,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            }
+        ],
+        "evalTimeStart": "2026-01-22T15:11:16.607090+00:00",
+        "feasible": true,
+        "final": true,
+        "objectives": [
+            {
+                "id": 800,
+                "name": "Failure Rate",
+                "ref": "failure-rate",
+                "archQoiId": 742,
+                "maximize": false,
+                "objectiveId": 101
+            },
+            {
+                "id": 801,
+                "name": "Mass",
+                "ref": "mass",
+                "archQoiId": 741,
+                "maximize": false,
+                "objectiveId": 102
+            }
+        ],
+        "perfEvaluated": false,
+        "system": {
+            "id": 737,
+            "name": "System",
+            "elementId": 15,
+            "components": [
+                {
+                    "id": 746,
+                    "name": "Sensor",
+                    "ref": "sensor",
+                    "elementId": 21,
+                    "fulfilledArchFunctionIds": [
+                        739
+                    ],
+                    "instances": [
+                        {
+                            "id": 747,
+                            "name": "Sensor 0",
+                            "elementId": 746,
+                            "attributes": [
+                                {
+                                    "id": 748,
+                                    "name": "Type",
+                                    "ref": "type",
+                                    "elementId": 27,
+                                    "values": [
+                                        "A"
+                                    ]
+                                }
+                            ],
+                            "index": 0,
+                            "inputPorts": [],
+                            "outputPorts": [
+                                {
+                                    "id": 749,
+                                    "name": "Data",
+                                    "elementId": 23,
+                                    "archPortId": 744,
+                                    "index": 0,
+                                    "targetIds": [
+                                        756,
+                                        760
+                                    ]
+                                }
+                            ],
+                            "qois": []
+                        },
+                        {
+                            "id": 750,
+                            "name": "Sensor 1",
+                            "elementId": 746,
+                            "attributes": [
+                                {
+                                    "id": 751,
+                                    "name": "Type",
+                                    "ref": "type",
+                                    "elementId": 27,
+                                    "values": [
+                                        "C"
+                                    ]
+                                }
+                            ],
+                            "index": 1,
+                            "inputPorts": [],
+                            "outputPorts": [
+                                {
+                                    "id": 752,
+                                    "name": "Data",
+                                    "elementId": 23,
+                                    "archPortId": 744,
+                                    "index": 0,
+                                    "targetIds": [
+                                        760
+                                    ]
+                                }
+                            ],
+                            "qois": []
+                        }
+                    ],
+                    "neededArchFunctionIds": [],
+                    "qois": []
+                },
+                {
+                    "id": 753,
+                    "name": "Computer",
+                    "ref": "computer",
+                    "elementId": 22,
+                    "fulfilledArchFunctionIds": [
+                        738
+                    ],
+                    "instances": [
+                        {
+                            "id": 754,
+                            "name": "Computer 0",
+                            "elementId": 753,
+                            "attributes": [
+                                {
+                                    "id": 755,
+                                    "name": "Type",
+                                    "ref": "type",
+                                    "elementId": 41,
+                                    "values": [
+                                        "A"
+                                    ]
+                                }
+                            ],
+                            "index": 0,
+                            "inputPorts": [
+                                {
+                                    "id": 756,
+                                    "name": "Data",
+                                    "elementId": 24,
+                                    "archPortId": 744,
+                                    "index": 0,
+                                    "targetIds": [
+                                        749
+                                    ]
+                                }
+                            ],
+                            "outputPorts": [
+                                {
+                                    "id": 757,
+                                    "name": "Command",
+                                    "elementId": 62,
+                                    "archPortId": 745,
+                                    "index": 0,
+                                    "targetIds": [
+                                        765
+                                    ]
+                                }
+                            ],
+                            "qois": []
+                        },
+                        {
+                            "id": 758,
+                            "name": "Computer 1",
+                            "elementId": 753,
+                            "attributes": [
+                                {
+                                    "id": 759,
+                                    "name": "Type",
+                                    "ref": "type",
+                                    "elementId": 41,
+                                    "values": [
+                                        "A"
+                                    ]
+                                }
+                            ],
+                            "index": 1,
+                            "inputPorts": [
+                                {
+                                    "id": 760,
+                                    "name": "Data",
+                                    "elementId": 24,
+                                    "archPortId": 744,
+                                    "index": 0,
+                                    "targetIds": [
+                                        749,
+                                        752
+                                    ]
+                                }
+                            ],
+                            "outputPorts": [
+                                {
+                                    "id": 761,
+                                    "name": "Command",
+                                    "elementId": 62,
+                                    "archPortId": 745,
+                                    "index": 0,
+                                    "targetIds": [
+                                        765
+                                    ]
+                                }
+                            ],
+                            "qois": []
+                        }
+                    ],
+                    "neededArchFunctionIds": [],
+                    "qois": []
+                },
+                {
+                    "id": 762,
+                    "name": "Actuator",
+                    "ref": "actuator",
+                    "elementId": 51,
+                    "fulfilledArchFunctionIds": [
+                        743
+                    ],
+                    "instances": [
+                        {
+                            "id": 763,
+                            "name": "Actuator 0",
+                            "elementId": 762,
+                            "attributes": [
+                                {
+                                    "id": 764,
+                                    "name": "Type",
+                                    "ref": "type",
+                                    "elementId": 53,
+                                    "values": [
+                                        "B"
+                                    ]
+                                }
+                            ],
+                            "index": 0,
+                            "inputPorts": [
+                                {
+                                    "id": 765,
+                                    "name": "Command",
+                                    "elementId": 63,
+                                    "archPortId": 745,
+                                    "index": 0,
+                                    "targetIds": [
+                                        757,
+                                        761
+                                    ]
+                                }
+                            ],
+                            "outputPorts": [],
+                            "qois": []
+                        }
+                    ],
+                    "neededArchFunctionIds": [],
+                    "qois": []
+                }
+            ],
+            "concepts": [],
+            "decompositions": [
+                {
+                    "id": 766,
+                    "name": "GNC Functions",
+                    "ref": "gnc-functions",
+                    "elementId": 17,
+                    "emergedArchFunctionId": 740,
+                    "zoomedArchFunctionIds": [
+                        739,
+                        738,
+                        743
+                    ]
+                }
+            ],
+            "functions": [
+                {
+                    "id": 738,
+                    "name": "Determine Action",
+                    "ref": "determine-action",
+                    "elementId": 18,
+                    "boundaryFunction": false,
+                    "qois": [],
+                    "type": "SOLUTION_SPECIFIC"
+                },
+                {
+                    "id": 739,
+                    "name": "Sense Orientation",
+                    "ref": "sense-orientation",
+                    "elementId": 19,
+                    "boundaryFunction": false,
+                    "qois": [],
+                    "type": "SOLUTION_SPECIFIC"
+                },
+                {
+                    "id": 740,
+                    "name": "Provide GNC",
+                    "ref": "provide-gnc",
+                    "elementId": 16,
+                    "boundaryFunction": true,
+                    "qois": [
+                        {
+                            "id": 741,
+                            "name": "Mass",
+                            "ref": "mass",
+                            "elementId": 48,
+                            "evaluated": false,
+                            "type": "OBJECTIVE",
+                            "units": "kg"
+                        },
+                        {
+                            "id": 742,
+                            "name": "Failure Rate",
+                            "ref": "failure-rate",
+                            "elementId": 49,
+                            "evaluated": false,
+                            "type": "OBJECTIVE"
+                        }
+                    ],
+                    "type": "SOLUTION_NEUTRAL"
+                },
+                {
+                    "id": 743,
+                    "name": "Control Orientation",
+                    "ref": "control-orientation",
+                    "elementId": 50,
+                    "boundaryFunction": false,
+                    "qois": [],
+                    "type": "SOLUTION_SPECIFIC"
+                }
+            ],
+            "multiFulfillments": [],
+            "nonFulfillments": [],
+            "ports": [
+                {
+                    "id": 744,
+                    "name": "Data",
+                    "ref": "data",
+                    "elementId": 20
+                },
+                {
+                    "id": 745,
+                    "name": "Command",
+                    "ref": "command",
+                    "elementId": 61
+                }
+            ],
+            "qois": [],
+            "index": 0,
+            "systems": []
+        }
+    },
+    "outputs": [
+        {
+            "archQoiId": 741,
+            "name": "Mass",
+            "ref": "mass",
+            "type": "OBJECTIVE",
+            "units": "kg",
+            "value": null
+        },
+        {
+            "archQoiId": 742,
+            "name": "Failure Rate",
+            "ref": "failure-rate",
+            "type": "OBJECTIVE",
+            "units": null,
+            "value": null
+        }
+    ],
+    "designSpace": {
+        "context": {
+            "id": 14,
+            "name": "System Context",
+            "exclude": false,
+            "isConditional": false,
+            "isIncluded": true,
+            "components": [],
+            "concepts": [],
+            "decompositions": [],
+            "functions": [],
+            "multiFulfillments": [],
+            "nonFulfillments": [],
+            "ports": [],
+            "qois": []
+        },
+        "decisions": [
+            {
+                "id": 57,
+                "name": "DecisionType.OPTION",
+                "ref": "decisiontype-option",
+                "nOpts": 3,
+                "operation": "COMPONENT_INSTANTIATION",
+                "sourceRefElementIds": [
+                    51
+                ],
+                "targetRefElementIds": [
+                    51
+                ],
+                "type": "OPTION"
+            },
+            {
+                "id": 40,
+                "name": "DecisionType.OPTION",
+                "nOpts": 3,
+                "operation": "COMPONENT_INSTANTIATION",
+                "sourceRefElementIds": [
+                    22
+                ],
+                "targetRefElementIds": [
+                    22
+                ],
+                "type": "OPTION"
+            },
+            {
+                "id": 26,
+                "name": "DecisionType.OPTION",
+                "nOpts": 3,
+                "operation": "COMPONENT_INSTANTIATION",
+                "sourceRefElementIds": [
+                    21
+                ],
+                "targetRefElementIds": [
+                    21
+                ],
+                "type": "OPTION"
+            },
+            {
+                "id": 58,
+                "name": "DecisionType.PERMUTATION",
+                "ref": "decisiontype-permutation",
+                "componentIdx": 0,
+                "operation": "ATTRIBUTE_VALUE",
+                "sourceRefElementIds": [
+                    53
+                ],
+                "stats": {
+                    "distanceCorrelation": 0.163335947533777,
+                    "encoder": "Unordered Combining Pattern Encoder",
+                    "imputationRatio": 2.526315789473684,
+                    "imputationRatioComb": 2.526315789473684,
+                    "imputationRatioCont": 1.0,
+                    "informationIndex": 1.0,
+                    "nDeclared": 16,
+                    "nDimCont": 0,
+                    "nDimContMean": 0.0,
+                    "nDiscrete": 4,
+                    "nExistence": 3,
+                    "nValid": 19
+                },
+                "targetRefElementIds": [
+                    56,
+                    54,
+                    55
+                ],
+                "type": "PERMUTATION"
+            },
+            {
+                "id": 47,
+                "name": "DecisionType.PERMUTATION",
+                "componentIdx": 0,
+                "operation": "ATTRIBUTE_VALUE",
+                "sourceRefElementIds": [
+                    41
+                ],
+                "stats": {
+                    "distanceCorrelation": 0.163335947533777,
+                    "encoder": "Unordered Combining Pattern Encoder",
+                    "imputationRatio": 2.526315789473684,
+                    "imputationRatioComb": 2.526315789473684,
+                    "imputationRatioCont": 1.0,
+                    "informationIndex": 1.0,
+                    "nDeclared": 16,
+                    "nDimCont": 0,
+                    "nDimContMean": 0.0,
+                    "nDiscrete": 4,
+                    "nExistence": 3,
+                    "nValid": 19
+                },
+                "targetRefElementIds": [
+                    42,
+                    44,
+                    46
+                ],
+                "type": "PERMUTATION"
+            },
+            {
+                "id": 39,
+                "name": "DecisionType.PERMUTATION",
+                "componentIdx": 0,
+                "operation": "ATTRIBUTE_VALUE",
+                "sourceRefElementIds": [
+                    27
+                ],
+                "stats": {
+                    "distanceCorrelation": 0.163335947533777,
+                    "encoder": "Unordered Combining Pattern Encoder",
+                    "imputationRatio": 2.526315789473684,
+                    "imputationRatioComb": 2.526315789473684,
+                    "imputationRatioCont": 1.0,
+                    "informationIndex": 1.0,
+                    "nDeclared": 16,
+                    "nDimCont": 0,
+                    "nDimContMean": 0.0,
+                    "nDiscrete": 4,
+                    "nExistence": 3,
+                    "nValid": 19
+                },
+                "targetRefElementIds": [
+                    38,
+                    28,
+                    36
+                ],
+                "type": "PERMUTATION"
+            },
+            {
+                "id": 65,
+                "name": "DecisionType.PERMUTATION",
+                "ref": "decisiontype-permutation",
+                "operation": "PORT_CONNECTION",
+                "sourceRefElementIds": [
+                    62,
+                    61,
+                    22
+                ],
+                "stats": {
+                    "distanceCorrelation": 1.0,
+                    "encoder": "Assigning Pattern Encoder",
+                    "imputationRatio": 14.091743119266056,
+                    "imputationRatioComb": 14.091743119266056,
+                    "imputationRatioCont": 1.0,
+                    "informationIndex": 1.0,
+                    "nDeclared": 512,
+                    "nDimCont": 0,
+                    "nDimContMean": 0.0,
+                    "nDiscrete": 9,
+                    "nExistence": 9,
+                    "nValid": 327
+                },
+                "targetRefElementIds": [
+                    63,
+                    61,
+                    51
+                ],
+                "type": "PERMUTATION"
+            },
+            {
+                "id": 66,
+                "name": "DecisionType.PERMUTATION",
+                "ref": "decisiontype-permutation",
+                "operation": "PORT_CONNECTION",
+                "sourceRefElementIds": [
+                    23,
+                    20,
+                    21
+                ],
+                "stats": {
+                    "distanceCorrelation": 0.9999999999999957,
+                    "encoder": "Assigning Pattern Encoder",
+                    "imputationRatio": 14.091743119266056,
+                    "imputationRatioComb": 14.091743119266056,
+                    "imputationRatioCont": 1.0,
+                    "informationIndex": 1.0,
+                    "nDeclared": 512,
+                    "nDimCont": 0,
+                    "nDimContMean": 0.0,
+                    "nDiscrete": 9,
+                    "nExistence": 9,
+                    "nValid": 327
+                },
+                "targetRefElementIds": [
+                    24,
+                    20,
+                    22
+                ],
+                "type": "PERMUTATION"
+            }
+        ],
+        "optDecStats": {
+            "distanceCorrelation": 0.0,
+            "encoder": "complete",
+            "imputationRatio": 1.0,
+            "imputationRatioComb": 1.0,
+            "imputationRatioCont": 1.0,
+            "informationIndex": 0.5326391266975781,
+            "nDeclared": 27,
+            "nDimCont": 0,
+            "nDimContMean": 0.0,
+            "nDiscrete": 3,
+            "nExistence": 1,
+            "nValid": 27
+        },
+        "stats": {
+            "distanceCorrelation": 0.0,
+            "encoder": "complete",
+            "imputationRatio": 366.55132508024934,
+            "imputationRatioComb": 366.55132508024934,
+            "imputationRatioCont": 1.0,
+            "informationIndex": 0.9480108620699449,
+            "nDeclared": 28991029248,
+            "nDimCont": 0,
+            "nDimContMean": 0.0,
+            "nDiscrete": 33,
+            "nExistence": 1,
+            "nValid": 79091323
+        },
+        "structuralConstraints": [],
+        "system": {
+            "id": 15,
+            "name": "System",
+            "exclude": false,
+            "isConditional": false,
+            "isIncluded": true,
+            "components": [
+                {
+                    "id": 21,
+                    "name": "Sensor",
+                    "ref": "sensor",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "attributes": [],
+                    "fulfilledFunctionIds": [
+                        19
+                    ],
+                    "inputPorts": [],
+                    "instanceAttributes": [
+                        {
+                            "id": 27,
+                            "name": "Type",
+                            "ref": "type",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nSpecific": [
+                                    1
+                                ],
+                                "repeatAllowed": true
+                            },
+                            "groupPerComponent": true,
+                            "values": [
+                                {
+                                    "id": 28,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "A"
+                                },
+                                {
+                                    "id": 36,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "B"
+                                },
+                                {
+                                    "id": 38,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "C"
+                                }
+                            ]
+                        }
+                    ],
+                    "instanceQois": [],
+                    "neededFunctionIds": [],
+                    "nInst": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "outputPorts": [
+                        {
+                            "id": 23,
+                            "name": "Data",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nRangeMin": 1,
+                                "repeatAllowed": false
+                            },
+                            "nInst": [
+                                1
+                            ],
+                            "portId": 20,
+                            "selfConnectAllowed": true
+                        }
+                    ],
+                    "qois": []
+                },
+                {
+                    "id": 22,
+                    "name": "Computer",
+                    "ref": "computer",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "attributes": [],
+                    "fulfilledFunctionIds": [
+                        18
+                    ],
+                    "inputPorts": [
+                        {
+                            "id": 24,
+                            "name": "Data",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nRangeMin": 1,
+                                "repeatAllowed": false
+                            },
+                            "nInst": [
+                                1
+                            ],
+                            "portId": 20,
+                            "selfConnectAllowed": true
+                        }
+                    ],
+                    "instanceAttributes": [
+                        {
+                            "id": 41,
+                            "name": "Type",
+                            "ref": "type",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nSpecific": [
+                                    1
+                                ],
+                                "repeatAllowed": true
+                            },
+                            "groupPerComponent": true,
+                            "values": [
+                                {
+                                    "id": 42,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "A"
+                                },
+                                {
+                                    "id": 44,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "B"
+                                },
+                                {
+                                    "id": 46,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "C"
+                                }
+                            ]
+                        }
+                    ],
+                    "instanceQois": [],
+                    "neededFunctionIds": [],
+                    "nInst": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "outputPorts": [
+                        {
+                            "id": 62,
+                            "name": "Command",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nRangeMin": 1,
+                                "repeatAllowed": false
+                            },
+                            "nInst": [
+                                1
+                            ],
+                            "portId": 61,
+                            "selfConnectAllowed": true
+                        }
+                    ],
+                    "qois": []
+                },
+                {
+                    "id": 51,
+                    "name": "Actuator",
+                    "ref": "actuator",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "attributes": [],
+                    "fulfilledFunctionIds": [
+                        50
+                    ],
+                    "inputPorts": [
+                        {
+                            "id": 63,
+                            "name": "Command",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nRangeMin": 1,
+                                "repeatAllowed": false
+                            },
+                            "nInst": [
+                                1
+                            ],
+                            "portId": 61,
+                            "selfConnectAllowed": true
+                        }
+                    ],
+                    "instanceAttributes": [
+                        {
+                            "id": 53,
+                            "name": "Type",
+                            "ref": "type",
+                            "exclude": false,
+                            "isConditional": true,
+                            "isIncluded": true,
+                            "conn": {
+                                "nSpecific": [
+                                    1
+                                ],
+                                "repeatAllowed": true
+                            },
+                            "groupPerComponent": true,
+                            "values": [
+                                {
+                                    "id": 54,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "A"
+                                },
+                                {
+                                    "id": 55,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "B"
+                                },
+                                {
+                                    "id": 56,
+                                    "name": "Type",
+                                    "exclude": false,
+                                    "isConditional": true,
+                                    "isIncluded": true,
+                                    "conn": {
+                                        "nRangeMax": 3,
+                                        "repeatAllowed": true
+                                    },
+                                    "value": "C"
+                                }
+                            ]
+                        }
+                    ],
+                    "instanceQois": [],
+                    "neededFunctionIds": [],
+                    "nInst": [
+                        1,
+                        2,
+                        3
+                    ],
+                    "outputPorts": [],
+                    "qois": []
+                }
+            ],
+            "concepts": [],
+            "decompositions": [
+                {
+                    "id": 17,
+                    "name": "GNC Functions",
+                    "ref": "gnc-functions",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "emergedFunctionId": 16,
+                    "zoomedFunctionIds": [
+                        19,
+                        18,
+                        50
+                    ]
+                }
+            ],
+            "functions": [
+                {
+                    "id": 18,
+                    "name": "Determine Action",
+                    "ref": "determine-action",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "qois": [],
+                    "type": "SOLUTION_SPECIFIC"
+                },
+                {
+                    "id": 19,
+                    "name": "Sense Orientation",
+                    "ref": "sense-orientation",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "qois": [],
+                    "type": "SOLUTION_SPECIFIC"
+                },
+                {
+                    "id": 16,
+                    "name": "Provide GNC",
+                    "ref": "provide-gnc",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "qois": [
+                        {
+                            "id": 48,
+                            "name": "Mass",
+                            "ref": "mass",
+                            "exclude": false,
+                            "isConditional": false,
+                            "isIncluded": true,
+                            "posBetter": false,
+                            "type": "OBJECTIVE",
+                            "units": "kg"
+                        },
+                        {
+                            "id": 49,
+                            "name": "Failure Rate",
+                            "ref": "failure-rate",
+                            "exclude": false,
+                            "isConditional": false,
+                            "isIncluded": true,
+                            "posBetter": false,
+                            "type": "OBJECTIVE"
+                        }
+                    ],
+                    "type": "SOLUTION_NEUTRAL"
+                },
+                {
+                    "id": 50,
+                    "name": "Control Orientation",
+                    "ref": "control-orientation",
+                    "exclude": false,
+                    "isConditional": false,
+                    "isIncluded": true,
+                    "qois": [],
+                    "type": "SOLUTION_SPECIFIC"
+                }
+            ],
+            "multiFulfillments": [],
+            "nonFulfillments": [],
+            "ports": [
+                {
+                    "id": 20,
+                    "name": "Data",
+                    "ref": "data",
+                    "exclude": false,
+                    "isConditional": true,
+                    "isIncluded": true
+                },
+                {
+                    "id": 61,
+                    "name": "Command",
+                    "ref": "command",
+                    "exclude": false,
+                    "isConditional": true,
+                    "isIncluded": true
+                }
+            ],
+            "qois": [],
+            "nInst": [
+                1
+            ],
+            "systems": []
+        }
+    },
+    "designProblem": {
+        "id": 67,
+        "name": "Design Problem #1",
+        "constraints": [],
+        "designVars": [
+            {
+                "id": 68,
+                "name": "Instantiate Component Actuator",
+                "ref": "decisiontype-option",
+                "decisionId": 57,
+                "options": [
+                    "1 time",
+                    "2 times",
+                    "3 times"
+                ]
+            },
+            {
+                "id": 69,
+                "name": "Instantiate Component Computer",
+                "decisionId": 40,
+                "options": [
+                    "1 time",
+                    "2 times",
+                    "3 times"
+                ]
+            },
+            {
+                "id": 70,
+                "name": "Instantiate Component Sensor",
+                "decisionId": 26,
+                "options": [
+                    "1 time",
+                    "2 times",
+                    "3 times"
+                ]
+            },
+            {
+                "id": 71,
+                "name": "Attribute Actuator 1/3 -> Type (1)",
+                "ref": "decisiontype-permutation",
+                "componentIdx": 0,
+                "decisionId": 58,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 72,
+                "name": "Attribute Actuator 1/3 -> Type (2)",
+                "ref": "decisiontype-permutation",
+                "componentIdx": 0,
+                "decisionId": 58,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 73,
+                "name": "Attribute Actuator 1/3 -> Type (3)",
+                "ref": "decisiontype-permutation",
+                "componentIdx": 0,
+                "decisionId": 58,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 74,
+                "name": "Attribute Actuator 1/3 -> Type (4)",
+                "ref": "decisiontype-permutation",
+                "componentIdx": 0,
+                "decisionId": 58,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 75,
+                "name": "Attribute Computer 1/3 -> Type (1)",
+                "componentIdx": 0,
+                "decisionId": 47,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 76,
+                "name": "Attribute Computer 1/3 -> Type (2)",
+                "componentIdx": 0,
+                "decisionId": 47,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 77,
+                "name": "Attribute Computer 1/3 -> Type (3)",
+                "componentIdx": 0,
+                "decisionId": 47,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 78,
+                "name": "Attribute Computer 1/3 -> Type (4)",
+                "componentIdx": 0,
+                "decisionId": 47,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 79,
+                "name": "Attribute Sensor 1/3 -> Type (1)",
+                "componentIdx": 0,
+                "decisionId": 39,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 80,
+                "name": "Attribute Sensor 1/3 -> Type (2)",
+                "componentIdx": 0,
+                "decisionId": 39,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 81,
+                "name": "Attribute Sensor 1/3 -> Type (3)",
+                "componentIdx": 0,
+                "decisionId": 39,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 82,
+                "name": "Attribute Sensor 1/3 -> Type (4)",
+                "componentIdx": 0,
+                "decisionId": 39,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 83,
+                "name": "Connect Port Command (1)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 84,
+                "name": "Connect Port Command (2)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 85,
+                "name": "Connect Port Command (3)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 86,
+                "name": "Connect Port Command (4)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 87,
+                "name": "Connect Port Command (5)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 88,
+                "name": "Connect Port Command (6)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 89,
+                "name": "Connect Port Command (7)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 90,
+                "name": "Connect Port Command (8)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 91,
+                "name": "Connect Port Command (9)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 65,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 92,
+                "name": "Connect Port Data (1)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 93,
+                "name": "Connect Port Data (2)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 94,
+                "name": "Connect Port Data (3)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 95,
+                "name": "Connect Port Data (4)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 96,
+                "name": "Connect Port Data (5)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 97,
+                "name": "Connect Port Data (6)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 98,
+                "name": "Connect Port Data (7)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 99,
+                "name": "Connect Port Data (8)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            },
+            {
+                "id": 100,
+                "name": "Connect Port Data (9)",
+                "ref": "decisiontype-permutation",
+                "decisionId": 66,
+                "options": [
+                    "0",
+                    "1"
+                ]
+            }
+        ],
+        "encoder": "complete",
+        "fixedStats": {
+            "distanceCorrelation": 0.0,
+            "encoder": "complete",
+            "imputationRatio": 366.55132508024934,
+            "imputationRatioComb": 366.55132508024934,
+            "imputationRatioCont": 1.0,
+            "informationIndex": 0.9480108620699449,
+            "nDeclared": 28991029248,
+            "nDimCont": 0,
+            "nDimContMean": 0.0,
+            "nDiscrete": 33,
+            "nExistence": 1,
+            "nValid": 79091323
+        },
+        "metrics": [],
+        "objectives": [
+            {
+                "id": 101,
+                "name": "Failure Rate",
+                "ref": "failure-rate",
+                "alwaysExists": true,
+                "originalType": "OBJECTIVE",
+                "qoiId": 49,
+                "maximize": false
+            },
+            {
+                "id": 102,
+                "name": "Mass",
+                "ref": "mass",
+                "alwaysExists": true,
+                "originalType": "OBJECTIVE",
+                "qoiId": 48,
+                "maximize": false
+            }
+        ],
+        "stats": {
+            "distanceCorrelation": 0.0,
+            "encoder": "complete",
+            "imputationRatio": 366.55132508024934,
+            "imputationRatioComb": 366.55132508024934,
+            "imputationRatioCont": 1.0,
+            "informationIndex": 0.9480108620699449,
+            "nDeclared": 28991029248,
+            "nDimCont": 0,
+            "nDimContMean": 0.0,
+            "nDiscrete": 33,
+            "nExistence": 1,
+            "nValid": 79091323
+        }
+    }
+}
